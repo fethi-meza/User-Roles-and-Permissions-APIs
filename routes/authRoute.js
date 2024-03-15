@@ -1,13 +1,11 @@
-const express = require('express')
-
-const route = express.Router()
+const router  = require('express').Router()
 
 
-const AuthController =  requirr('../Controller/authControlle.js')
-const {ValidatorRegister}  = require('../helpers/Validator')
 
+const authController = require('../Controller/authControlle')
+const {registerValidator}= require('../helpers/Validator')
 
-route.post('/register',ValidatorRegister , AuthController.registerUser )
+router.post('/register',registerValidator ,authController.registerUser)
 
+module.exports = router
 
-module.exports = route

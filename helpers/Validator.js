@@ -1,10 +1,9 @@
-const {check}= require('express-validator')
+const { check } = require('express-validator');
 
-exports.registerValidator  =[
-
-    check('name' , 'Name is required ').not().isEmpty(),
-    check('email' , 'Please includea valid eamil ').not().isEmail().normalizeEmail({
-gmail_remove_dots :true
+exports.registerValidator = [
+    check('name', 'Name is required').not().isEmpty(),
+    check('email', 'Please include a valid email').isEmail().normalizeEmail({
+        gmail_remove_dots: true
     }),
-    check('name' , 'Name is required ').not().isEmpty(),
-] ;
+    check('password','password is required').not().isEmpty(), 
+];
