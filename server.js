@@ -15,7 +15,7 @@ const port = process.env.PortServer|| 3000
 app.use(express.json())
 
 app.use(express.static('public'))
-app.use('/api',AuthRoute)
+app.use('/api',AuthRoute) 
 
 
 
