@@ -7,3 +7,11 @@ exports.registerValidator = [
     }),
     check('password','password is required').not().isEmpty(), 
 ];
+
+exports.loginValidator = [
+   
+    check('email', 'Please include a valid email').isEmail().normalizeEmail({
+        gmail_remove_dots: true
+    }),
+    check('password','password is required').not().isEmpty(), 
+];
